@@ -1,9 +1,7 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
-const Manager = require('./lib/manager')
-const Engineer = require('./lib/engineer')
-const Intern = require('./lib/intern')
-const { generateHtml } = require('./generateHtml')
+const employees = require('./lib/employees')
+const { generateHtml } = require('./lib/generateHtml')
 
 const team = []
 
@@ -13,38 +11,64 @@ function getTeam() {
         .prompt([
             {
                 type: 'input',
-                message: 'What is your name?',
+                message: 'What is the employee name?',
                 name: 'name'
             },
             {
                 type: 'input',
-                message: 'What is your employee ID?',
+                message: 'What is the employee ID?',
                 name: 'id'
             },
             {
                 type: 'input',
-                message: 'What is your email address?',
+                message: 'What is the employee email address?',
                 name: 'email'
             },
             {
+                type: 'list',
+                message: 'What is the employee job role?',
+                name: 'role',
+                choices: [
+                    'manager',
+                    'engineer',
+                    'intern'
+                ]
+            },
+            {
                 type: 'input',
-                message: 'What is your office number?',
-                name: 'office'
+                message: 'What is the manager office number?',
+                name: 'office',
+                when: (answers) => answers.role === 'manager'
+            },
+            {
+                type: 'input',
+                message: 'What is the engineer github username?',
+                name: 'github',
+                when: (answers) => answers.role === 'engineer'
+            },
+            {
+                type: 'input',
+                message: 'What is the intern school name?',
+                name: 'school',
+                when: (answers) => answers.role === 'intern'
             },
             {
                 type: 'list',
-                message: 'Would you like to add any team members?',
+                message: 'Would you like to add another employee?',
                 name: 'add',
                 choices: [
-                    'engineer',
-                    'intern',
-                    'finish building team'
+                    'yes',
+                    'no'
                 ]
             }
         ])
         .then((answer) => {
-
-            generateHtml(answer)
-
+            if (answer.add === 'yes') {
+                getTeam()
+            } else {
+                generateHtml()
+            }
         })
 }
+
+getTeam()
