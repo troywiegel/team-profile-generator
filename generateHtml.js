@@ -11,13 +11,13 @@ function generateHtml(team) {
             case 'manager':
                 let managerCard =
                     `
-                <div class="card manager" style="width: 18rem;">
-                    <div class="card-header text-white bg-info">${team[i].name}</div>
-                    <div class="card-body">
-                        <h5 class="card-title">${team[i].role}</h5>
-                        <p class="card-text">ID: ${team[i].id}</p>
-                        <p class="card-text">Email: ${team[i].email}</p>
-                        <p class="card-text">Office Number: ${team[i].office}</p>
+                <div class='card manager' style='width: 18rem;'>
+                    <div class='card-header text-white bg-info'>${team[i].name}</div>
+                    <div class='card-body'>
+                        <h5 class='card-title'>${team[i].role}</h5>
+                        <p class='card-text'>ID: ${team[i].id}</p>
+                        <a href='mailto: ${team[i].email}' class='card-text'>Email</a>
+                        <p class='card-text'>Office Number: ${team[i].office}</p>
                     </div>
                 </div>
                 `
@@ -26,13 +26,14 @@ function generateHtml(team) {
             case 'engineer':
                 let engineerCard =
                     `
-                <div class="card engineer" style="width: 18rem;">
-                     <div class="card-header text-white bg-info">${team[i].name}</div>
-                     <div class="card-body">
-                         <h5 class="card-title">${team[i].role}</h5>
-                         <p class="card-text">ID: ${team[i].id}</p>
-                         <p class="card-text">Email: ${team[i].email}</p>
-                         <p class="card-text">Github: ${team[i].github}</p>
+                <div class='card engineer' style='width: 18rem;'>
+                     <div class='card-header text-white bg-info'>${team[i].name}</div>
+                     <div class='card-body'>
+                         <h5 class='card-title'>${team[i].role}</h5>
+                         <p class='card-text'>ID: ${team[i].id}</p>
+                         <a href='mailto: ${team[i].email}' class='card-text'>Email</a>
+                         <br>
+                         <a href='https://github.com/${team[i].github}' target='_blank' class='card-text'>Github</a>
                      </div>
                  </div>
                 `
@@ -41,13 +42,13 @@ function generateHtml(team) {
             case 'intern':
                 let internCard =
                     `
-                <div class="card intern" style="width: 18rem;">
-                    <div class="card-header text-white bg-info">${team[i].name}</div>
-                    <div class="card-body">
-                        <h5 class="card-title">${team[i].role}</h5>
-                        <p class="card-text">ID: ${team[i].id}</p>
-                        <p class="card-text">Email: ${team[i].email}</p>
-                        <p class="card-text">School: ${team[i].school}</p>
+                <div class='card intern' style='width: 18rem;'>
+                    <div class='card-header text-white bg-info'>${team[i].name}</div>
+                    <div class='card-body'>
+                        <h5 class='card-title'>${team[i].role}</h5>
+                        <p class='card-text'>ID: ${team[i].id}</p>
+                        <a href='mailto: ${team[i].email}' class='card-text'>Email</a>
+                        <p class='card-text'>School: ${team[i].school}</p>
                     </div>
                 </div>
                 `
@@ -81,7 +82,7 @@ function generateHtml(team) {
         </header>
         
         <div class="card-wrapper d-flex flex-row justify-content-around">
-            ${cards}
+            ${cards.join(' ')}
         </div>
         
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
