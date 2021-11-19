@@ -10,6 +10,8 @@ This is a node.js app that takes user input(s) with inquirer and builds a team o
 ![team-profile-generator](https://user-images.githubusercontent.com/37552547/142574659-aecca03e-4730-402b-bc40-a833e39a1d10.gif)
 
 [See full video demo here!](https://drive.google.com/file/d/1Hy28pGVwPuvP4hQP7OVkUNMaECsCMXvw/view?usp=sharing)
+
+![teamHtml](https://user-images.githubusercontent.com/37552547/142575900-c9d79ceb-65c6-4f95-91f9-2da84ad29eeb.png)
 <br><br>
                         
 ## Table of Contents
