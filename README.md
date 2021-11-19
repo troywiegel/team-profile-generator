@@ -4,6 +4,10 @@
                         
 ## Description
 This is a node.js app that takes user input(s) with inquirer and builds a team of managers, engineers and interns. It then creates an html file that displays your team.
+
+![team-profile-generator](https://user-images.githubusercontent.com/37552547/142574659-aecca03e-4730-402b-bc40-a833e39a1d10.gif)
+
+[See full video demo here!](https://drive.google.com/file/d/1Hy28pGVwPuvP4hQP7OVkUNMaECsCMXvw/view?usp=sharing)
 <br><br>
                         
 ## Table of Contents
