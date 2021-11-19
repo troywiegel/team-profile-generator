@@ -58,26 +58,23 @@ function getTeam() {
 
             let employee;
 
-            if (answer.role === 'manager') {
+            switch (answer.role) {
 
-                employee = new Manager(answer.name, answer.id, answer.email, answer.role, answer.office)
-                team.push(employee)
-
-                addEmployee()
-
-            } else if (answer.role === 'engineer') {
-
-                employee = new Engineer(answer.name, answer.id, answer.email, answer.role, answer.github)
-                team.push(employee)
-
-                addEmployee()
-
-            } else if (answer.role === 'intern') {
-
-                employee = new Intern(answer.name, answer.id, answer.email, answer.role, answer.school)
-                team.push(employee)
-
-                addEmployee()
+                case 'manager':
+                    employee = new Manager(answer.name, answer.id, answer.email, answer.role, answer.office)
+                    team.push(employee)
+                    addEmployee()
+                    break;
+                case 'engineer':
+                    employee = new Engineer(answer.name, answer.id, answer.email, answer.role, answer.github)
+                    team.push(employee)
+                    addEmployee()
+                    break;
+                case 'intern':
+                    employee = new Intern(answer.name, answer.id, answer.email, answer.role, answer.school)
+                    team.push(employee)
+                    addEmployee()
+                    break;
             }
         })
 }

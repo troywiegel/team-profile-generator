@@ -6,58 +6,58 @@ function generateHtml(team) {
 
     for (let i = 0; i < team.length; i++) {
 
-        if (team[i].role === 'manager') {
+        switch (team[i].role) {
 
-            let managerCard = `
-       
-       <div class="card manager" style="width: 18rem;">
-            <div class="card-header text-white bg-info">${team[i].name}</div>
-            <div class="card-body">
-                <h5 class="card-title">${team[i].role}</h5>
-                <p class="card-text">ID: ${team[i].id}</p>
-                <p class="card-text">Email: ${team[i].email}</p>
-                <p class="card-text">Office Number: ${team[i].office}</p>
-            </div>
-        </div>
-       `
-            cards.push(managerCard)
-
-        } else if (team[i].role === 'engineer') {
-
-            let engineerCard = `
-       
-       <div class="card engineer" style="width: 18rem;">
-            <div class="card-header text-white bg-info">${team[i].name}</div>
-            <div class="card-body">
-                <h5 class="card-title">${team[i].role}</h5>
-                <p class="card-text">ID: ${team[i].id}</p>
-                <p class="card-text">Email: ${team[i].email}</p>
-                <p class="card-text">Github: ${team[i].github}</p>
-            </div>
-        </div>
-       `
-            cards.push(engineerCard)
-
-        } else if (team[i].role === 'intern') {
-
-            let internCard = `
-       
-       <div class="card intern" style="width: 18rem;">
-            <div class="card-header text-white bg-info">${team[i].name}</div>
-            <div class="card-body">
-                <h5 class="card-title">${team[i].role}</h5>
-                <p class="card-text">ID: ${team[i].id}</p>
-                <p class="card-text">Email: ${team[i].email}</p>
-                <p class="card-text">School: ${team[i].school}</p>
-            </div>
-        </div>
-       `
-            cards.push(internCard)
+            case 'manager':
+                let managerCard =
+                    `
+                <div class="card manager" style="width: 18rem;">
+                    <div class="card-header text-white bg-info">${team[i].name}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">${team[i].role}</h5>
+                        <p class="card-text">ID: ${team[i].id}</p>
+                        <p class="card-text">Email: ${team[i].email}</p>
+                        <p class="card-text">Office Number: ${team[i].office}</p>
+                    </div>
+                </div>
+                `
+                cards.push(managerCard)
+                break;
+            case 'engineer':
+                let engineerCard =
+                    `
+                <div class="card engineer" style="width: 18rem;">
+                     <div class="card-header text-white bg-info">${team[i].name}</div>
+                     <div class="card-body">
+                         <h5 class="card-title">${team[i].role}</h5>
+                         <p class="card-text">ID: ${team[i].id}</p>
+                         <p class="card-text">Email: ${team[i].email}</p>
+                         <p class="card-text">Github: ${team[i].github}</p>
+                     </div>
+                 </div>
+                `
+                cards.push(engineerCard)
+                break;
+            case 'intern':
+                let internCard =
+                    `
+                <div class="card intern" style="width: 18rem;">
+                    <div class="card-header text-white bg-info">${team[i].name}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">${team[i].role}</h5>
+                        <p class="card-text">ID: ${team[i].id}</p>
+                        <p class="card-text">Email: ${team[i].email}</p>
+                        <p class="card-text">School: ${team[i].school}</p>
+                    </div>
+                </div>
+                `
+                cards.push(internCard)
+                break;
         }
     }
 
-    let html = `
-
+    let html =
+        `
     <!DOCTYPE html>
     <html lang="en">
         
