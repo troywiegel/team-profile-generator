@@ -1,11 +1,12 @@
 const fs = require('fs')
 
+// generates html page filled with employee info
 function generateHtml(team) {
-
+    // empty array to fill with employee card html info
     const cards = []
 
     for (let i = 0; i < team.length; i++) {
-
+        // switch to cycle through employees based on role and generate html card
         switch (team[i].role) {
 
             case 'manager':
@@ -56,7 +57,7 @@ function generateHtml(team) {
                 break;
         }
     }
-
+    // html to generate html file with
     let html =
         `
     <!DOCTYPE html>
@@ -98,6 +99,7 @@ function generateHtml(team) {
         
     </html>
     `
+    // writing new html file with employee info to the ./dist folder
     fs.writeFile('./dist/myteam.html', html, function (err) {
 
         err ? console.error(err) : console.log('Success! Wrote the Html page ✔️')

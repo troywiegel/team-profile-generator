@@ -5,10 +5,12 @@ const Engineer = require('./lib/engineer')
 const Intern = require('./lib/intern')
 const generateHtml = require('./generateHtml')
 
+// empty array to place employees into
 const team = []
 
+// function to prompt user for employee info
 function getTeam() {
-
+    // using inquirer to prompt user via the terminal
     inquirer.prompt([
         {
             type: 'input',
@@ -55,7 +57,7 @@ function getTeam() {
         },
     ])
         .then((answer) => {
-
+            // employee switch to cyle through employee by role and create new class member accordingly
             let employee;
 
             switch (answer.role) {
@@ -78,9 +80,9 @@ function getTeam() {
             }
         })
 }
-
+// function to ask if more employees should be added or if html file should be generated
 function addEmployee() {
-
+    // using inquirer to prompt user via the terminal
     inquirer
         .prompt([
             {
@@ -101,5 +103,5 @@ function addEmployee() {
             }
         })
 }
-
+// calls getTeam() function to start the app
 getTeam()
